@@ -18,4 +18,14 @@ public void isleap_1996()
 {
 	assertTrue(lp.isLeap(1996));
 }
+@Test
+public void isleap_2000()
+{
+	assertTrue(lp.isLeap(2000));
+}
+@Test
+public void isnotleap_2001()
+{
+	assertFalse(lp.isLeap(2001));
+}
 }
