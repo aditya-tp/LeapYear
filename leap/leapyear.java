@@ -3,7 +3,7 @@ package leap;
 public class leapyear {
 public boolean isLeap(int year)
 {
-	boolean result=(ismultipleof4(year))&&(isnotmultipleof100(year))||(ismultipleof400(year));
+	boolean result=ismultipleof4(year)&&isnotmultipleof100_or_ismultipleof100and400(year);
 	return result;
 }
 public boolean ismultipleof4(int year)
@@ -18,8 +18,12 @@ public boolean isnotmultipleof100(int year)
 {
 	return !ismultipleof(year,100);
 }
-public boolean ismultipleof400(int year)
+public boolean isnotmultipleof100_or_ismultipleof100and400(int year)
 {
-	return ismultipleof(year,400);
+	return isnotmultipleof100(year) || ismultipleof100and400(year);
+}
+public boolean ismultipleof100and400(int year)
+{
+	return ismultipleof(year,100) && ismultipleof(year,400);
 }
 }
